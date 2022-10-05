@@ -2,7 +2,7 @@ from datetime import datetime
 from gc import get_objects
 from multiprocessing import context
 from django.views.generic import TemplateView
-from django.shortcuts import get_list_or_404
+from django.shortcuts import get_object_or_404
 from mainapp import models as mainapp_models
 
 
@@ -27,7 +27,7 @@ class NewsPageView(TemplateView):
 
 
 class NewsPageDetailView(TemplateView):
-    template_name: "mainapp/news_detail.html"
+    template_name = "mainapp/news_detail.html"
 
     def get_context_data(self, pk=None, **kwargs):
         context = super().get_context_data(pk=pk, **kwargs)
