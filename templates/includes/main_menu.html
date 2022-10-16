@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{% url 'mainapp:news' %}">Новости</a>
                 </li>
                 <li class="nav-item {% if request.resolver_match.view_name == 'mainapp:courses' %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'mainapp:courses_list' %}">Курсы</a>
+                    <a class="nav-link" href="{% url 'mainapp:courses' %}">Курсы</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
@@ -33,6 +33,8 @@
                         <a class="dropdown-item" href="{% url 'admin:index' %}"
                         target="_blank">Административный
                             раздел</a>
+                        <a class="dropdown-item" href="{% url 'mainapp:log_view' %}"
+                        target="_blank">Лог</a>                            
                         {% endif %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'authapp:logout' %}">Выход</a>
